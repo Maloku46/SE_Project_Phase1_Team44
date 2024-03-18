@@ -1,7 +1,8 @@
 # SE_Project_Phase1_Team44
 Welcome to the SE_Project_Phase1_Team44
 
-Team members: Arbi Maloku (Leader) email: amaloku21@epoka.edu.al 
+Team members: 
+Arbi Maloku (Leader) email: amaloku21@epoka.edu.al 
 Albjori Dollani email: adollani21@epoka.edu.al 
 Gledian Alimema email: galimema21@epoka.edu.al 
 Hysen Allushi email: hallushi21@epoka.edu.al 
