@@ -6,6 +6,7 @@ Albjori Dollani email: adollani21@epoka.edu.al
 Gledian Alimema email: galimema21@epoka.edu.al 
 Hysen Allushi email: hallushi21@epoka.edu.al 
 Orgest Shira email: oshira21@epoka.edu.al
+Adrian Ahmati email: aahmati21@epoka.edu.al
 
 Roles and Tasks:
 
