@@ -1,0 +1,128 @@
+Phase III: Software Design and Modeling
+In Phase III of our project, we will focus on software design and modeling.
+Software Design and Modeling
+Group Name: Adrian Ahmati
+Albjori Dollani
+Arbi Maloku
+Gledian Alimema
+Hysen Allushi
+Orgest Shira
+System Architecture:
+1. User Interface (UI):
+• The UI is the visual layer that players interact with. It includes the chessboard, pieces, and menus.
+• Players can make moves by clicking on squares or dragging pieces.
+• The UI also displays game information such as player turn, captured pieces, and game status.
+2. Game Logic:
+• The game logic manages the rules of chess.
+• It validates moves, checks for checkmate, stalemate, and other game conditions.
+• It maintains the state of the board, piece positions, and player turns.
+3. Board Representation:
+• The chessboard is represented internally as an 8x8 grid.
+• Each square can hold a piece (pawn, knight, bishop, etc.) or be empty.
+• The board representation is updated after each move.
+4. Piece Movement:
+• Each piece type has specific movement rules.
+• The application calculates legal moves based on the piece type, position, and board state.
+• It ensures that moves adhere to chess rules
+ 
+ 
+5. Player Interaction:
+• Players input moves via the UI.
+• The application translates these inputs into moves on the board.
+• It validates whether the move is legal and updates the board accordingly.
+6. Game State Management:
+• The application tracks game states (ongoing, checkmate, draw).
+• It detects check (when a king is under threat) and checkmate (game-ending condition).
+• Draws occur due to stalemate, insufficient material, or threefold repetition.
+7. AI Opponent (if not 2-player mode):
+• The AI evaluates positions, searches for optimal moves, and selects the best move.
+• Algorithms like minimax with alpha-beta pruning are commonly used.
+8. Persistence and Saving:
+• The application saves game progress to allow players to resume later.
+• It stores data such as piece positions, player turns, and captured pieces.
+• Serialization techniques (e.g., JSON, databases) are used for persistence.
+9. Networking (if possible):
+• In online chess, players connect over the internet.
+• Networking components handle communication between players’ devices.
+• They synchronize moves, update game state, and manage player connections.
+10. Graphics and Animation:
+• Visual elements enhance the user experience.
+• Graphics libraries render the game.
+• Animations show piece movements, captures, and check notifications.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Component Diagram:
+
+ 
+ 
+Class Diagram
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Sequence Diagrams:
+
+Database Design:
+1. User Profiles and Authentication:
+• The application likely has a User table to store information about registered users.
+• Fields in this table might include:
+▪ User ID
+▪ Username
+▪ Email
+▪ Hashed password
+▪ Preferences (such as theme, language, etc.)
+ 
+ 
+ 
+2. Games and Moves:
+• The core of a chess application revolves around games and moves.
+• There could be a Game table to store information about each chess game.
+• Fields in this table might include:
+▪ Game ID
+▪ Player 1 (White)
+▪ Player 2 (Black)
+▪ Game status (ongoing, checkmate, stalemate, etc.)
+▪ Timestamps (start time, end time)
+• Additionally, there might be a Move table to record individual moves within a game.
+▪ Fields in this table might include:
+• Move ID
+• Game ID (foreign key linking to the Game table)
+• Player (White or Black)
+• Move notation (e.g., “e2 to e4”)
+• Timestamp
+3. Pieces and Positions:
+• To represent the chessboard, the application could have a Piece table.
+• Fields in this table might include:
+▪ Piece ID
+▪ Game ID (foreign key linking to the Game table)
+▪ Piece type (pawn, rook, bishop, etc.)
+▪ Color (White or Black)
+▪ Current position (e.g., “e2”)
+• The positions of pieces are dynamically updated as moves are made.
+4. Game History and PGN:
+• The application might store game history in a standardized format like PGN (Portable Game Notation).
+• PGN records all moves of a game, including metadata (such as player names, event, site, etc.).
+• The PGN data can be stored in a separate table or as a serialized field within the Game table.
+5. Indexes and Optimization:
+• To ensure efficient data retrieval, the application might create indexes on frequently queried fields (e.g., Game ID, Player ID, Piece position).
+• Proper indexing helps speed up searches and reduces database load.
+ 
+6. Relationships:
+• Relationships between tables are established using foreign keys.
+• For example:
+▪ The Move table references the Game table via the Game ID.
+▪ The Piece table references the Game table via the Game ID.
+▪ The User table might have relationships with the Game table
